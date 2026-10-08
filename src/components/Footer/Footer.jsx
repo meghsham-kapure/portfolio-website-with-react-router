@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 export default function Footer() {
   return (
@@ -7,11 +7,9 @@ export default function Footer() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link to="/" className="flex items-center">
-              <img
-                src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-                className="mr-3 h-16"
-                alt="Logo"
-              />
+              <span className="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+                DevDotMaverick
+              </span>
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -21,14 +19,24 @@ export default function Footer() {
               </h2>
               <ul className="font-medium text-gray-400">
                 <li className="mb-4">
-                  <Link to="/" className="transition hover:text-gray-200">
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `hover:text-blue-600 ${isActive ? " transition trans underline underline-offset-5  decoration-blue-600 " : ""}`
+                    }
+                  >
                     Home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/about" className="transition hover:text-gray-200">
+                  <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                      `hover:text-blue-600 ${isActive ? " transition trans underline underline-offset-5  decoration-blue-600 " : ""}`
+                    }
+                  >
                     About
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -39,7 +47,7 @@ export default function Footer() {
               <ul className="font-medium text-gray-400">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/hiteshchoudhary"
+                    href="https://github.com/meghsham-kapure"
                     className="transition hover:text-gray-200"
                     target="_blank"
                     rel="noreferrer"
@@ -76,14 +84,14 @@ export default function Footer() {
         <hr className="my-6 border-gray-800 lg:my-8 sm:mx-auto" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-gray-400 text-sm sm:text-center">
-            © 2023
+            © 2026
             <a
-              href="https://hiteshchoudhary.com/"
+              href="https://devdotmaverick.com/"
               className="transition hover:text-gray-200"
             >
-              hiteshchoudhary
+              {" DevDotMaverick.com"}
             </a>
-            . All Rights Reserved.
+            {" All Rights Reserved."}
           </span>
           <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
             <Link

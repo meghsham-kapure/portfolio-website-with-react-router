@@ -1,16 +1,13 @@
 import { Link, NavLink } from "react-router";
-
 export default function Header() {
   return (
     <header className="z-50 sticky top-0 shadow">
       <nav className="px-4 py-2.5 bg-gray-900 border-b border-gray-800 lg:px-6">
-        <div className="flex flex-wrap items-center justify-between mx-auto max-w-7xl">
+        <div className="flex flex-wrap items-center justify-between mx-auto max-w-screen-xl">
           <Link to="/" className="flex items-center">
-            <img
-              src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-              className="mr-3 h-12"
-              alt="Logo"
-            />
+            <span className="font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+              DevDotMaverick
+            </span>
           </Link>
           <div className="flex gap-2 items-center lg:order-2">
             <Link
@@ -31,13 +28,81 @@ export default function Header() {
             id="mobile-menu-2"
           >
             <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:mt-0 lg:space-x-8">
-              <li>
+              <li className="relative">
                 <NavLink
-                  className={() =>
-                    `block py-2 pr-4 pl-3 duration-200 border-b border-gray-700 hover:bg-gray-800 lg:hover:bg-transparent lg:border-0 hover:text-blue-400 lg:p-0 text-gray-300`
+                  to="/"
+                  className={({ isActive }) =>
+                    `py-2 text-gray-300 duration-200 ${
+                      isActive ? "text-blue-400" : "hover:text-blue-400"
+                    }`
                   }
                 >
-                  Home
+                  {({ isActive }) => (
+                    <>
+                      Home
+                      {isActive && (
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"></div>
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              </li>
+              <li className="relative">
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `py-2 text-gray-300 duration-200 ${
+                      isActive ? "text-blue-400" : "hover:text-blue-400"
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      About
+                      {isActive && (
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"></div>
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              </li>
+              <li className="relative">
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    `py-2 text-gray-300 duration-200 ${
+                      isActive ? "text-blue-400" : "hover:text-blue-400"
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      Contact
+                      {isActive && (
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"></div>
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              </li>
+
+              <li className="relative">
+                <NavLink
+                  to="/github"
+                  className={({ isActive }) =>
+                    `py-2 text-gray-300 duration-200 ${
+                      isActive ? "text-blue-400" : "hover:text-blue-400"
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      GitHub
+                      {isActive && (
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400"></div>
+                      )}
+                    </>
+                  )}
                 </NavLink>
               </li>
             </ul>

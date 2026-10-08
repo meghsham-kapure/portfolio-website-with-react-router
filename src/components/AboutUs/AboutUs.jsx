@@ -4,10 +4,7 @@ export default function About() {
       <div className="container m-auto px-6 text-gray-400 md:px-12 xl:px-6">
         <div className="space-y-6 lg:gap-12 lg:items-center md:flex md:gap-6 md:space-y-0">
           <div className="lg:w-5/12 md:5/12">
-            <img
-              src="https://tailus.io/sources/blocks/left-image/preview/images/startup.png"
-              alt="image"
-            />
+            <img src="/assets/we.avif" alt="image" />
           </div>
           <div className="lg:w-6/12 md:7/12">
             <h2 className="font-bold text-2xl text-gray-100 md:text-4xl">
